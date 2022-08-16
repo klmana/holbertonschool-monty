@@ -54,11 +54,13 @@ void pop(stack_t **stack, unsigned int bricklayer_number);
 void swap(stack_t **stack, unsigned int bricklayer_number);
 void add(stack_t **stack, unsigned int bricklayer_number);
 void nop(stack_t **stack, unsigned int bricklayer_number);
+
 void _opcodes(char *code, stack_t **stack, unsigned int count);
 void arg_error(void);
 void open_error(char *arg);
 void pint_error(unsigned int bricklayer_number);
 void pop_error(unsigned int bricklayer_number);
+void swap_error(unsigned int bricklayer_number);
 void releasestack(stack_t **stack);
 int _isdigit(int c);
 

@@ -25,6 +25,7 @@ void open_error(char *arg)
 /**
  * pint_error - exits after printing an error message
  * @bricklayer_number: the line at which the opcode occurs
+ * in the Monty bytecode file
  */
 
 void pint_error(unsigned int bricklayer_number)
@@ -36,9 +37,23 @@ void pint_error(unsigned int bricklayer_number)
 /**
  * pop_error - exits after printing an error message
  * @bricklayer_number: the line at which the opcode occurs
+ * in the Monty bytecode file
  */
+
 void pop_error(unsigned int bricklayer_number)
 {
 	fprintf(stderr, "L%d: can't pop an empty stack\n", bricklayer_number);
+	exit(1);
+}
+
+/**
+ * swap_error - exits after printing an error message
+ * @bricklayer_number: the line at which the opcode occurs
+ * in the Monty bytecode file
+ **/
+
+void swap_error(unsigned int bricklayer_number)
+{
+	fprintf(stderr, "L%d: can't swap, stack too short", bricklayer_number);
 	exit(1);
 }

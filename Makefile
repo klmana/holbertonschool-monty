@@ -13,7 +13,8 @@ SRC=	_opcodes.c \
 	mandatory_functions.c \
 	monty_loop.c \
 	pint.c \
-	pop.c
+	pop.c \
+	swap.c \
 
 SRC2=	*.c
 
