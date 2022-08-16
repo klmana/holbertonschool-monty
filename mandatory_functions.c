@@ -11,6 +11,7 @@ void push(stack_t **stack, unsigned int number)
 /* Define the stack_t as a new item in the double linked list */
 	stack_t *new;
 	char *arg = Arg.argument;
+	int i = 0;
 /* Prepare space for the new item called new */
 	new = malloc(sizeof(stack_t));
 /* Case where there is not enough space in memory then display error message and exit the process */
@@ -27,8 +28,14 @@ void push(stack_t **stack, unsigned int number)
                 releasestack(stack);
                 exit(EXIT_FAILURE);
         }
-
-	 
+/* Case where there is an entry which is not an integer in the argument then display error message and exit the process */
+	while(arg[i] != '\0')
+	{
+		if ((_isdigit(arg[i])) == 0 && arg[i] != '-')
+			fprintf(stderr, "L%d: usage: push integer\n", number);
+                releasestack(stack);
+                exit(EXIT_FAILURE);
+	}
 /* Normal case where the new stack element will host the number (integer) to be added */
 /* new element in stack is becaming the number then defines the previouse element */
 /* as empty (NULL) then includes the new element in the overall stack */
