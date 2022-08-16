@@ -47,7 +47,7 @@ typedef struct arg
 } arg;
 arg Arg;
 
-void push(stack_t **stack, unsigned int);
+void push(stack_t **stack, unsigned int bricklayer_number);
 void pall(stack_t **stack, unsigned int);
 void pint(stack_t **stack, unsigned int bricklayer_number);
 void pop(stack_t **stack, unsigned int bricklayer_number);

@@ -6,7 +6,7 @@
  *@number: new number to store in the stack within the stack_t element
  */
 
-void push(stack_t **stack, unsigned int number)
+void push(stack_t **stack, unsigned int bricklayer_number)
 {
 	stack_t *new;
 	char *arg = Arg.argument;
@@ -15,7 +15,7 @@ void push(stack_t **stack, unsigned int number)
 
 	if (arg == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", number);
+		fprintf(stderr, "L%d: usage: push integer\n", bricklayer_number);
 		releasestack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -23,7 +23,7 @@ void push(stack_t **stack, unsigned int number)
 	{
 		if (_isdigit(arg[i]) == 0 && arg[i] != '-')
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", number);
+			fprintf(stderr, "L%d: usage: push integer\n", bricklayer_number);
 			releasestack(stack);
 			exit(EXIT_FAILURE);
 		}
