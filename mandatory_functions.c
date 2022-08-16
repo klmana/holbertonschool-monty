@@ -14,7 +14,7 @@ void push(stack_t **stack, unsigned int number)
 /* Prepare space for the new item called new */
 	new = malloc(sizeof(stack_t));
 /* Case where there is not enough space in memory then display error message and exit the process */
-	if (new == NULL || arg == NULL)
+	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		releasestack(stack);
