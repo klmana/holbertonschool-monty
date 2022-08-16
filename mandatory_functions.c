@@ -3,7 +3,7 @@
 /**
  *push - add a new integer to the stack
  *@stack: doubly linked list representation of stack
- *@briecklayer_number: new number to store in the stack within the stack_t element
+ *@bricklayer_number: new number to store in the stack withinthestack_telement
  */
 
 void push(stack_t **stack, unsigned int bricklayer_number)
