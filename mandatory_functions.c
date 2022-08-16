@@ -85,8 +85,8 @@ void add(stack_t **stack, unsigned int bricklayer_number)
 {
 	unsigned int sum;
 
-	/* If the stack contains less than two elements, print terror message */
-	if ((*stack == NULL) || ((*stack)->next == NULL && (*stack)->prev == NULL))
+	/* If the stack contains less than two elements, print error message */
+	if ((*stack)->next == NULL && (*stack)->prev == NULL))
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", bricklayer_number);
 		exit(EXIT_FAILURE);
