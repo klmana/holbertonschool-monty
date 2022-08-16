@@ -28,5 +28,5 @@ void _opcodes(char *code, stack_t **stack, unsigned int count)
 		i = i + 1;
 	}
 	fprintf(stderr, "L%d: unknown instruction %s\n", count, code);
-	exit(1);
+	exit(EXIT_FAILURE);
 }
