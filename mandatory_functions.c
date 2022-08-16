@@ -63,8 +63,6 @@ void pall(stack_t **stack, unsigned int bricklayer_number)
 	stack_t *existingStack;
 /* stating the second parameter, bricklayer_number is unused in the function */
 	(void)bricklayer_number;
-/* defining the stack as existingStack to have a temporary stack to work with */
-	existingStack = *stack;
 /* case where the stack doesnt exists then take no action */
 	if (stack == NULL || *stack == NULL)
 		return;
