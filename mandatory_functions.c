@@ -19,7 +19,7 @@ void push(stack_t **stack, unsigned int bricklayer_number)
 		releasestack(stack);
 		exit(EXIT_FAILURE);
 	}
-	while (arg[i] != '\0')
+/*	while (arg[i] != '\0')
 	{
 		if (_isdigit(arg[i]) == 0 && arg[i] != '-')
 		{
@@ -28,7 +28,7 @@ void push(stack_t **stack, unsigned int bricklayer_number)
 			exit(EXIT_FAILURE);
 		}
 		i = i + 1;
-	}
+		} */
 	data = atoi(arg);
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
