@@ -14,6 +14,7 @@ void _opcodes(char *code, stack_t **stack, unsigned int count)
 	instruction_t opcodes[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
