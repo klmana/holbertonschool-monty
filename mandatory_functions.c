@@ -3,7 +3,7 @@
 /**
  *push - add a new integer to the stack
  *@stack: doubly linked list representation of stack
- *@number: new number to store in the stack within the stack_t element
+ *@briecklayer_number: new number to store in the stack within the stack_t element
  */
 
 void push(stack_t **stack, unsigned int bricklayer_number)
@@ -120,6 +120,6 @@ void nop(stack_t **stack, unsigned int bricklayer_number)
  */
 void swap(stack_t **stack, unsigned int bricklayer_number)
 {
-        (void) stack;
-        (void) bricklayer_number;
+	(void) stack;
+	(void) bricklayer_number;
 }
