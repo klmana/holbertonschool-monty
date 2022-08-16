@@ -50,7 +50,9 @@ void push(stack_t **stack, unsigned int);
 void pall(stack_t **stack, unsigned int);
 void pint(stack_t **stack, unsigned int bricklayer_number);
 void pop(stack_t **stack, unsigned int bricklayer_number);
-
+void swap(stack_t **stack, unsigned int bricklayer_number);
+void add(stack_t **stack, unsigned int bricklayer_number);
+void nop(stack_t **stack, unsigned int bricklayer_number);
 void _opcodes(char *code, stack_t **stack, unsigned int count);
 void arg_error(void);
 void open_error(char *arg);
