@@ -32,3 +32,9 @@ void pint_error(unsigned int bricklayer_number)
 	fprintf(stderr, "L%d: can't pint, stack empty\n", bricklayer_number);
 	exit (1);
 }
+
+void pop_error(unsigned int bricklayer_number)
+{
+	fprintf(stderr, "L%d: can't pop an empty stack", bricklayer_number);
+	exit (1);
+}

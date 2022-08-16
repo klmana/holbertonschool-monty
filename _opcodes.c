@@ -15,6 +15,7 @@ void _opcodes(char *code, stack_t **stack, unsigned int count)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 

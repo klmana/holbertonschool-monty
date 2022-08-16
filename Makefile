@@ -12,7 +12,8 @@ SRC=	_opcodes.c \
 	error_functions.c \
 	mandatory_functions.c \
 	monty_loop.c \
-	pint.c
+	pint.c \
+	pop.c
 
 SRC2=	*.c
 
