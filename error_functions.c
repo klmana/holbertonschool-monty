@@ -54,6 +54,6 @@ void pop_error(unsigned int bricklayer_number)
 
 void swap_error(unsigned int bricklayer_number)
 {
-	fprintf(stderr, "L%d: can't swap, stack too short", bricklayer_number);
+	fprintf(stderr, "L%d: can't swap, stack too short\n", bricklayer_number);
 	exit(1);
 }
