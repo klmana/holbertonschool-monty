@@ -10,15 +10,12 @@
 int main(int argc, char *argv[])
 {
 	char *line, *code;
-	size_t len;
-	unsigned int count;
+	size_t len = 0;
+	unsigned int count = 1;
 	stack_t *stack;
 	FILE *fd;
 
-	line = NULL;
-	count = 1;
-	len = 0;
-	code = NULL;
+	line, code = NULL;
 	stack = NULL;
 	fd = NULL;
 
@@ -51,12 +48,13 @@ int main(int argc, char *argv[])
 	free(line);
 	releasestack(&stack);
 	fclose(fd);
-	return(0);
+	return (0);
 }
 
 
 /**
- * releasestack - receives a stack as parameter, create temporary element then frees the space	
+ * releasestack - receives a stack as parameter,
+ * create temporary element then frees the space
  * @stack: doubly linked list representation of a stack
  */
 

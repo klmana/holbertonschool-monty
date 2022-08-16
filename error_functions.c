@@ -30,11 +30,15 @@ void open_error(char *arg)
 void pint_error(unsigned int bricklayer_number)
 {
 	fprintf(stderr, "L%d: can't pint, stack empty\n", bricklayer_number);
-	exit (1);
+	exit(1);
 }
 
+/**
+ * pop_error - exits after printing an error message
+ * @bricklayer_number: the line at which the opcode occurs
+ */
 void pop_error(unsigned int bricklayer_number)
 {
 	fprintf(stderr, "L%d: can't pop an empty stack\n", bricklayer_number);
-	exit (1);
+	exit(1);
 }
