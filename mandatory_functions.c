@@ -66,8 +66,10 @@ void pall(stack_t **stack, unsigned int bricklayer_number)
 /* defining the stack as existingStack to have a temporary stack to work with */
 	existingStack = *stack;
 /* case where the stack doesnt exists then take no action */
-	if (existingStack == NULL)
+	if (stack == NULL || *stack == NULL)
 		return;
+/* defining the stack as existingStack to have a temporary stack to work with */
+        existingStack = *stack;
 /* case where it is not NULL then whil loop to go through the stack */
 /* and print the content then go to the next block */
 	while (existingStack != NULL)
