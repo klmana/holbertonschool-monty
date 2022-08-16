@@ -31,4 +31,16 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct arg - argument for the current opcode
+ * @argument: the arguments of the string
+ */
+typedef struct arg
+{
+	char *argument;
+} arg;
+
+void _opcodes(char *code, stack_t **stack, unsigned int count);
+void open_error(char *arg);
+
 #endif /* _MONTY_H_ */
