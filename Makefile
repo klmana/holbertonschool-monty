@@ -5,13 +5,14 @@ CC=gcc
 CFLAGS=-Wall -Werror -Wextra -pedantic -std=gnu90 -g
 BETTY=betty
 VALGRIND=valgrind
-VFLAGS= --leak-check=full --show-leak-kinds=all ./hsh
+VFLAGS= --leak-check=full --show-leak-kinds=all ./monty
 
-TARGET=hsh
+TARGET=monty
 SRC=	_opcodes.c \
 	error_functions.c \
 	mandatory_functions.c \
-	monty_loop.c
+	monty_loop.c \
+	_pint.c
 
 SRC2=	*.c
 
