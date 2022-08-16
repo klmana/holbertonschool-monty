@@ -111,3 +111,16 @@ void add(stack_t **stack, unsigned int bricklayer_number)
 	pop(stack, 0);
 	push(stack, sum);
 }
+
+
+/** 
+ * nop - The opcode nop doesn’t do anything. ignores the command
+ * @stack: doubly linked list representation of a stack
+ * @bricklayer_number: brick layer number from which the content shouldbe printed
+*/
+
+void nop(stack_t **stack, unsigned int bricklayer_number)
+{
+	(void) stack;
+	(void) bricklayer_number;
+}
