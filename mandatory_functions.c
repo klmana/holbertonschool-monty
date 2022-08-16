@@ -35,6 +35,7 @@ void push(stack_t **stack, unsigned int number)
 			fprintf(stderr, "L%d: usage: push integer\n", number);
                 releasestack(stack);
                 exit(EXIT_FAILURE);
+		i = i + 1;
 	}
 /* Normal case where the new stack element will host the number (integer) to be added */
 /* new element in stack is becaming the number then defines the previouse element */
