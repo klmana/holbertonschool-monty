@@ -1,6 +1,11 @@
 #ifndef _MONTY_H_
  #define _MONTY_H_
 
+#include <stdlib.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <string.h>
+
  /**
   * struct stack_s - doubly linked list representation of a stack (or queue)
   * @n: integer
@@ -44,6 +49,7 @@ void push(stack_t **stack, unsigned int);
 void pall(stack_t **stack, unsigned int);
 
 void _opcodes(char *code, stack_t **stack, unsigned int count);
+void arg_error(void);
 void open_error(char *arg);
 
 #endif /* _MONTY_H_ */

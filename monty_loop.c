@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "monty.h"
 
 /**
@@ -14,8 +12,8 @@ int main(int argc, char *argv[])
 	char *line, *code;
 	size_t len;
 	unsigned int count;
-	stack_t *temp, **stack;
-	FILE *fd
+	stack_t *temporary, *stack;
+	FILE *fd;
 
 	line = NULL;
 	count = 1;
@@ -24,6 +22,10 @@ int main(int argc, char *argv[])
 	stack = NULL;
 	fd = NULL;
 
+	if (argc != 2)
+	{
+		arg_error();
+	}
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
 	{
@@ -42,6 +44,7 @@ int main(int argc, char *argv[])
 		count = count + 1;
 	}
 	free(line);
+	stack_free(&stack);
 
 	while (*stack != NULL)
 	{
@@ -49,6 +52,6 @@ int main(int argc, char *argv[])
 		*stack = temporary->next;
 		free(temporary);
 	}
-	close(fd);
+	fclose(fd);
 	exit(0);
 }
