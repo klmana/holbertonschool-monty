@@ -108,3 +108,75 @@ void nop(stack_t **stack, unsigned int bricklayer_number)
 	(void) stack;
 	(void) bricklayer_number;
 }
+
+/**
+ * pint - prints the value at the top of the stack
+ *@stack: doubly linked list representation of a stack
+ *@bricklayer_number: brick layer number from which the
+ * content is printed
+ */
+
+void pint(stack_t **stack, unsigned int bricklayer_number)
+{
+
+	if (stack == NULL || *stack == NULL)
+	{
+		pint_error(bricklayer_number);
+	}
+	printf("%d\n", (*stack)->n);
+}
+
+/**
+ * pop - deletes the top stack element
+ * @stack: a pointer to a doubly-linked list of elements
+ * @bricklayer_number: the line at which the opcode occurs
+ */
+
+void pop(stack_t **stack, unsigned int bricklayer_number)
+{
+	stack_t *temporary;
+
+	if (stack == NULL || *stack == NULL)
+	{
+		pop_error(bricklayer_number);
+	}
+
+	temporary = NULL;
+	if (*stack != NULL)
+	{
+		temporary = *stack;
+		*stack = (*stack)->next;
+		free(temporary);
+	}
+}
+/**
+ * swap - swaps the top two stack elements
+ * @stack: a pointer to a doubly-linked list of elements
+ * @bricklayer_number: the line at which the opcode occurs
+ * within the monty bytecode file
+ */
+
+void swap(stack_t **stack, unsigned int bricklayer_number)
+{
+	stack_t *temporary;
+	int count;
+
+	count = 0;
+	temporary = *stack;
+	while (temporary != NULL)
+	{
+		temporary = temporary->next;
+		count = count + 1;
+	}
+	if (count < 2)
+	{
+		swap_error(bricklayer_number);
+	}
+
+	temporary = *stack;
+	*stack = (*stack)->next;
+	temporary->next = (*stack)->next;
+	(*stack)->next = temporary;
+	temporary->prev = *stack;
+	(*stack)->prev = NULL;
+}
