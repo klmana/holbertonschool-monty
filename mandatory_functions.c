@@ -10,7 +10,6 @@ void push(stack_t **stack, unsigned int bricklayer_number)
 {
 	stack_t *new;
 	char *arg = Arg.argument;
-	int i = 0;
 	int data;
 
 	if (arg == NULL)
