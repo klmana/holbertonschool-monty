@@ -83,8 +83,6 @@ void pall(stack_t **stack, unsigned int bricklayer_number)
 
 void add(stack_t **stack, unsigned int bricklayer_number)
 {
-	unsigned int sum;
-
 	/* If the stack contains less than two elements, print error message */
 	if ((*stack == NULL) || ((*stack)->next == NULL && (*stack)->prev == NULL))
 	{
@@ -92,12 +90,10 @@ void add(stack_t **stack, unsigned int bricklayer_number)
 		exit(EXIT_FAILURE);
 	}
 	/* adds the content of the 2 elements on top */
-	sum = (*stack)->n + (*stack)->next->n;
+	(*stack)->next->n += (*stack)->n;
 	/* removes the two elements of the top of the stack */
 	/* then add the sum on top */
-	pop(stack, 0);
-	pop(stack, 0);
-	push(stack, sum);
+	pop(stack, bricklayer_number);
 }
 
 
