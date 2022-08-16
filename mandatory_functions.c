@@ -112,14 +112,3 @@ void nop(stack_t **stack, unsigned int bricklayer_number)
 	(void) stack;
 	(void) bricklayer_number;
 }
-
-/**
- * swap - The opcode nop doesn’t do anything. ignores the command
- * @stack: doubly linked list representation of a stack
- * @bricklayer_number: brick layer number from whichthecontent shouldbe printed
- */
-void swap(stack_t **stack, unsigned int bricklayer_number)
-{
-	(void) stack;
-	(void) bricklayer_number;
-}
