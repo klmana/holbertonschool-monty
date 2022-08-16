@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	line = NULL;
 	count = 1;
-	len = 32;
+	len = 0;
 	code = NULL;
 	stack = NULL;
 	fd = NULL;
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	free(line);
 	releasestack(&stack);
 	fclose(fd);
-	exit(0);
+	return(0);
 }
 
 
