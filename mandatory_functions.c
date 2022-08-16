@@ -10,10 +10,11 @@ void push(stack_t **stack, unsigned int number)
 {
 /* Define the stack_t as a new item in the double linked list */
 	stack_t *new;
+	char *arg = Arg.argument;
 /* Prepare space for the new item called new */
 	new = malloc(sizeof(stack_t));
-/* Case where there is not enought space in memory then display error message and exit the prosess */
-	if (new == NULL)
+/* Case where there is not enough space in memory then display error message and exit the process */
+	if (new == NULL || arg == NULL)
 	{
 		fprintf(stderr, "Erorr: malloc failed\n");
 		releasestack(stack);
