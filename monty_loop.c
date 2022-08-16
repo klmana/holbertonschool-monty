@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	char *line, *code;
 	size_t len;
 	unsigned int count;
-	stack_t *temporary, *stack;
+	stack_t *stack;
 	FILE *fd;
 
 	line = NULL;
@@ -39,19 +39,43 @@ int main(int argc, char *argv[])
 			count = count + 1;
 			continue;
 		}
-		arg.argument = strtok(NULL, " \t\n");
+		Arg.argument = strtok(NULL, " \t\n");
 		_opcodes(code, &stack, count);
 		count = count + 1;
 	}
 	free(line);
-	stack_free(&stack);
-
-	while (*stack != NULL)
-	{
-		temporary = *stack;
-		*stack = temporary->next;
-		free(temporary);
-	}
+	releasestack(&stack);
 	fclose(fd);
 	exit(0);
+}
+
+
+/**
+ * releasestack - receives a stack as parameter, create temporary element then frees the space	
+ * @stack: doubly linked list representation of a stack
+ */
+
+void releasestack(stack_t **stack)
+{
+	stack_t *existingStack;
+
+	while ((*stack) != NULL)
+	{
+		existingStack = (*stack);
+		(*stack) = (*stack)->next;
+		free(existingStack);
+	}
+}
+
+/**
+ *_isdigit - function that checks for a digit (0 through 9)
+ *@c: returns 1 if c is digit
+ *Return: always 0 otherwise
+ */
+int _isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
 }

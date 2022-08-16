@@ -3,9 +3,9 @@
 #include "monty.h"
 
 /**
- * arg_error - exits after printing an error message
-  */
-void usage_error(void)
+ *arg_error - exits after printing an error message
+ */
+void arg_error(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(1);

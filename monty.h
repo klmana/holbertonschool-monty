@@ -44,6 +44,7 @@ typedef struct arg
 {
 	char *argument;
 } arg;
+arg Arg;
 
 void push(stack_t **stack, unsigned int);
 void pall(stack_t **stack, unsigned int);
@@ -51,5 +52,7 @@ void pall(stack_t **stack, unsigned int);
 void _opcodes(char *code, stack_t **stack, unsigned int count);
 void arg_error(void);
 void open_error(char *arg);
+void releasestack(stack_t **stack);
+int _isdigit(int c);
 
 #endif /* _MONTY_H_ */
