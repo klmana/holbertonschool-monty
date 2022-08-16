@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
 	stack_t *stack;
 	FILE *fd;
 
-	line, code = NULL;
+	line = NULL;
+	code = NULL;
 	stack = NULL;
 	fd = NULL;
 
