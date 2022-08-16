@@ -31,10 +31,12 @@ void push(stack_t **stack, unsigned int number)
 /* Case where there is an entry which is not an integer in the argument then display error message and exit the process */
 	while(arg[i] != '\0')
 	{
-		if ((_isdigit(arg[i])) == 0)
+		if ((_isdigit(arg[i])) == 0 && arg[i] != '-')
+		{
 			fprintf(stderr, "L%d: usage: push integer\n", number);
-                releasestack(stack);
+			releasestack(stack);
                 exit(EXIT_FAILURE);
+		}
 		i = i + 1;
 	}
 /* Normal case where the new stack element will host the number (integer) to be added */
