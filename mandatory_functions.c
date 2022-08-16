@@ -12,6 +12,9 @@ void push(stack_t **stack, unsigned int number)
 	stack_t *new;
 	char *arg = Arg.argument;
 	int i = 0;
+	int data;
+
+	data = atoi(arg);
 /* Prepare space for the new item called new */
 	new = malloc(sizeof(stack_t));
 /* Case where there is not enough space in memory then display error message and exit the process */
@@ -35,14 +38,14 @@ void push(stack_t **stack, unsigned int number)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", number);
 			releasestack(stack);
-                exit(EXIT_FAILURE);
+			exit(EXIT_FAILURE);
 		}
 		i = i + 1;
 	}
 /* Normal case where the new stack element will host the number (integer) to be added */
 /* new element in stack is becaming the number then defines the previouse element */
 /* as empty (NULL) then includes the new element in the overall stack */
-	new->n = number;
+	new->n = data;
 	new->prev = NULL;
 	new->next = *stack;
 /* So if the stack exists then include the new element to it */
