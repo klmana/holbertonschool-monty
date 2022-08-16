@@ -16,10 +16,19 @@ void push(stack_t **stack, unsigned int number)
 /* Case where there is not enough space in memory then display error message and exit the process */
 	if (new == NULL || arg == NULL)
 	{
-		fprintf(stderr, "Erorr: malloc failed\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		releasestack(stack);
 		exit(EXIT_FAILURE);
 	}
+/* Case where the syntax is not correct then display error message and exit the process */
+        if (arg == NULL)
+        {
+                fprintf(stderr, "L%d: usage: push integer\n", number);
+                releasestack(stack);
+                exit(EXIT_FAILURE);
+        }
+
+	 
 /* Normal case where the new stack element will host the number (integer) to be added */
 /* new element in stack is becaming the number then defines the previouse element */
 /* as empty (NULL) then includes the new element in the overall stack */
