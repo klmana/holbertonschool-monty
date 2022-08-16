@@ -47,7 +47,10 @@ void push(stack_t **stack, unsigned int number)
 	new->next = *stack;
 /* So if the stack exists then include the new element to it */
 	if (*stack != NULL)
+	{
 		(*stack)->prev = new;
+		new->next = *stack;
+	}
 	*stack = new;
 }
 
