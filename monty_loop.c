@@ -31,13 +31,8 @@ int main(int argc, char *argv[])
 	}
 	while ((getline(&line, &len, fd)) != -1)
 	{
-		if (*line == '\n')
-		{
-			count = count + 1;
-			continue;
-		}
 		code = strtok(line, " \t\n");
-		if (code == NULL)
+		if ((code == NULL) || (*line == '\n'))
 		{
 			count = count + 1;
 			continue;
