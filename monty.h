@@ -41,11 +41,11 @@ typedef struct instruction_s
  * struct arg - argument for the current opcode
  * @argument: the arguments of the string
  */
-typedef struct arg
+typedef struct arg_s
 {
 	char *argument;
-} arg;
-arg Arg;
+} arg_t;
+arg_t g_Arg;
 
 void push(stack_t **stack, unsigned int monty_line);
 void pall(stack_t **stack, unsigned int);

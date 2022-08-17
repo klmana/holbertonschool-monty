@@ -10,7 +10,7 @@
 void push(stack_t **stack, unsigned int monty_line)
 {
 	stack_t *new;
-	char *arg = Arg.argument;
+	char *arg = g_Arg.argument;
 	int i = 0;
 	int data;
 
@@ -56,7 +56,7 @@ void push(stack_t **stack, unsigned int monty_line)
  * at which the relevant opcode occurs
  */
 
-void pall(stack_t **stack, unsigned int monty_line
+void pall(stack_t **stack, unsigned int monty_line)
 {
 /* defines the existing stack */
 	stack_t *existingStack;

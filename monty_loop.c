@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 			count = count + 1;
 			continue;
 		}
-		Arg.argument = strtok(NULL, " \t\n");
+		g_Arg.argument = strtok(NULL, " \t\n");
 		_opcodes(code, &stack, count);
 		count = count + 1;
 	}
