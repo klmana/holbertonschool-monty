@@ -34,7 +34,7 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int bricklayer_number);
+	void (*f)(stack_t **stack, unsigned int monty_line);
 } instruction_t;
 
 /**
@@ -47,20 +47,20 @@ typedef struct arg
 } arg;
 arg Arg;
 
-void push(stack_t **stack, unsigned int bricklayer_number);
+void push(stack_t **stack, unsigned int monty_line);
 void pall(stack_t **stack, unsigned int);
-void pint(stack_t **stack, unsigned int bricklayer_number);
-void pop(stack_t **stack, unsigned int bricklayer_number);
-void swap(stack_t **stack, unsigned int bricklayer_number);
-void add(stack_t **stack, unsigned int bricklayer_number);
-void nop(stack_t **stack, unsigned int bricklayer_number);
+void pint(stack_t **stack, unsigned int monty_line);
+void pop(stack_t **stack, unsigned int monty_line);
+void swap(stack_t **stack, unsigned int monty_line);
+void add(stack_t **stack, unsigned int monty_line);
+void nop(stack_t **stack, unsigned int monty_line);
 
-void _opcodes(char *code, stack_t **stack, unsigned int count);
+void _opcodes(char *code, stack_t **stack, unsigned int monty_line);
 void arg_error(void);
 void open_error(char *arg);
-void pint_error(unsigned int bricklayer_number);
-void pop_error(unsigned int bricklayer_number);
-void swap_error(unsigned int bricklayer_number);
+void pint_error(unsigned int monty_line);
+void pop_error(unsigned int monty_line);
+void swap_error(unsigned int monty_line);
 void releasestack(stack_t **stack);
 int _isdigit(int c);
 

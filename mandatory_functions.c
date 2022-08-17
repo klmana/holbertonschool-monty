@@ -1,12 +1,13 @@
 #include "monty.h"
 
 /**
- *push - add a new integer to the stack
- *@stack: doubly linked list representation of stack
- *@bricklayer_number: new number to store in the stack withinthestack_telement
+ * push - add a new integer to the stack
+ * @stack: doubly linked list representation of stack
+ * @monty_line: the line in the monty bytecode file
+ * at which the relevant opcode occurs
  */
 
-void push(stack_t **stack, unsigned int bricklayer_number)
+void push(stack_t **stack, unsigned int monty_line)
 {
 	stack_t *new;
 	char *arg = Arg.argument;
@@ -15,7 +16,7 @@ void push(stack_t **stack, unsigned int bricklayer_number)
 
 	if (arg == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", bricklayer_number);
+		fprintf(stderr, "L%d: usage: push integer\n", monty_line);
 		releasestack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -23,7 +24,7 @@ void push(stack_t **stack, unsigned int bricklayer_number)
 	{
 		if (_isdigit(arg[i]) == 0 && arg[i] != '-')
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", bricklayer_number);
+			fprintf(stderr, "L%d: usage: push integer\n", monty_line);
 			releasestack(stack);
 			exit(EXIT_FAILURE);
 		}
@@ -49,17 +50,18 @@ void push(stack_t **stack, unsigned int bricklayer_number)
 }
 
 /**
- *pall - parses the stack and prints it from the top to the buttom
- *@stack: doubly linked list representation of a stack
- *@bricklayer_number: brick layer number from which thecontent shouldbe printed
+ * pall - parses the stack and prints it from the top to the buttom
+ * @stack: doubly linked list representation of a stack
+ * @monty_line: the line in the monty bytecode file
+ * at which the relevant opcode occurs
  */
 
-void pall(stack_t **stack, unsigned int bricklayer_number)
+void pall(stack_t **stack, unsigned int monty_line
 {
 /* defines the existing stack */
 	stack_t *existingStack;
-/* stating the second parameter, bricklayer_number is unused in the function */
-	(void)bricklayer_number;
+/* stating the second parameter, monty_line is unused in the function */
+	(void)monty_line;
 /* case where the stack doesnt exists then take no action */
 	if (stack == NULL || *stack == NULL)
 		return;
@@ -78,50 +80,52 @@ void pall(stack_t **stack, unsigned int bricklayer_number)
 /**
  * add - adds the top two elements of the stack
  * @stack: doubly linked list representation of a stack
- * @bricklayer_number: brick layer number from which thecontent shouldbeprinted
-*/
+ * @monty_line: the line in the monty bytecode file
+ * at which the relevant opcode occurs
+ */
 
-void add(stack_t **stack, unsigned int bricklayer_number)
+void add(stack_t **stack, unsigned int monty_line)
 {
 	/* If the stack contains less than two elements, print error message */
 	if ((*stack == NULL) || ((*stack)->next == NULL && (*stack)->prev == NULL))
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", bricklayer_number);
+		fprintf(stderr, "L%d: can't add, stack too short\n", monty_line);
 		exit(EXIT_FAILURE);
 	}
 	/* adds the content of the 2 elements on top */
 	(*stack)->next->n += (*stack)->n;
 	/* removes the two elements of the top of the stack */
 	/* then add the sum on top */
-	pop(stack, bricklayer_number);
+	pop(stack, monty_line);
 }
 
 
 /**
- * nop - The opcode nop doesn’t do anything. ignores the command
+ * nop - The opcode nop doesn’t do anything. Ignores the command
  * @stack: doubly linked list representation of a stack
- * @bricklayer_number: brick layer number from whichthecontent shouldbe printed
+ * @monty_line: the line in the monty bytecode file
+ * at which the relevant opcode occurs
  */
 
-void nop(stack_t **stack, unsigned int bricklayer_number)
+void nop(stack_t **stack, unsigned int monty_line)
 {
 	(void) stack;
-	(void) bricklayer_number;
+	(void) monty_line;
 }
 
 /**
  * pint - prints the value at the top of the stack
- *@stack: doubly linked list representation of a stack
- *@bricklayer_number: brick layer number from which the
- * content is printed
+ * @stack: doubly linked list representation of a stack
+ * @monty_line: the line in the monty bytecode file
+ * at which the relevant opcode occurs
  */
 
-void pint(stack_t **stack, unsigned int bricklayer_number)
+void pint(stack_t **stack, unsigned int monty_line)
 {
 
 	if (stack == NULL || *stack == NULL)
 	{
-		pint_error(bricklayer_number);
+		pint_error(monty_line);
 	}
 	printf("%d\n", (*stack)->n);
 }
@@ -129,16 +133,17 @@ void pint(stack_t **stack, unsigned int bricklayer_number)
 /**
  * pop - deletes the top stack element
  * @stack: a pointer to a doubly-linked list of elements
- * @bricklayer_number: the line at which the opcode occurs
+ * @monty_line: the line in the monty bytecode file
+ * at which the relevant opcode occurs
  */
 
-void pop(stack_t **stack, unsigned int bricklayer_number)
+void pop(stack_t **stack, unsigned int monty_line)
 {
 	stack_t *temporary;
 
 	if (stack == NULL || *stack == NULL)
 	{
-		pop_error(bricklayer_number);
+		pop_error(monty_line);
 	}
 
 	temporary = NULL;
@@ -152,11 +157,11 @@ void pop(stack_t **stack, unsigned int bricklayer_number)
 /**
  * swap - swaps the top two stack elements
  * @stack: a pointer to a doubly-linked list of elements
- * @bricklayer_number: the line at which the opcode occurs
- * within the monty bytecode file
+ * @monty_line: the line in the monty bytecode file
+ * at which the relevant opcode occurs
  */
 
-void swap(stack_t **stack, unsigned int bricklayer_number)
+void swap(stack_t **stack, unsigned int monty_line)
 {
 	stack_t *temporary;
 	int count;
@@ -170,7 +175,7 @@ void swap(stack_t **stack, unsigned int bricklayer_number)
 	}
 	if (count < 2)
 	{
-		swap_error(bricklayer_number);
+		swap_error(monty_line);
 	}
 
 	temporary = *stack;

@@ -24,36 +24,36 @@ void open_error(char *arg)
 
 /**
  * pint_error - exits after printing an error message
- * @bricklayer_number: the line at which the opcode occurs
+ * @monty_line: the line at which the opcode occurs
  * in the Monty bytecode file
  */
 
-void pint_error(unsigned int bricklayer_number)
+void pint_error(unsigned int monty_line)
 {
-	fprintf(stderr, "L%d: can't pint, stack empty\n", bricklayer_number);
+	fprintf(stderr, "L%d: can't pint, stack empty\n", monty_line);
 	exit(1);
 }
 
 /**
  * pop_error - exits after printing an error message
- * @bricklayer_number: the line at which the opcode occurs
+ * @monty_line: the line at which the opcode occurs
  * in the Monty bytecode file
  */
 
-void pop_error(unsigned int bricklayer_number)
+void pop_error(unsigned int monty_line)
 {
-	fprintf(stderr, "L%d: can't pop an empty stack\n", bricklayer_number);
+	fprintf(stderr, "L%d: can't pop an empty stack\n", monty_line);
 	exit(1);
 }
 
 /**
  * swap_error - exits after printing an error message
- * @bricklayer_number: the line at which the opcode occurs
+ * @monty_line: the line at which the opcode occurs
  * in the Monty bytecode file
  **/
 
-void swap_error(unsigned int bricklayer_number)
+void swap_error(unsigned int monty_line)
 {
-	fprintf(stderr, "L%d: can't swap, stack too short\n", bricklayer_number);
+	fprintf(stderr, "L%d: can't swap, stack too short\n", monty_line);
 	exit(1);
 }
