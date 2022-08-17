@@ -11,10 +11,7 @@ TARGET=monty
 SRC=	_opcodes.c \
 	error_functions.c \
 	mandatory_functions.c \
-	monty_loop.c \
-	pint.c \
-	pop.c \
-	swap.c \
+	monty_loop.c
 
 SRC2=	*.c
 
