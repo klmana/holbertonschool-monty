@@ -55,12 +55,12 @@ void swap(stack_t **stack, unsigned int monty_line);
 void add(stack_t **stack, unsigned int monty_line);
 void nop(stack_t **stack, unsigned int monty_line);
 
-void _opcodes(char *code, stack_t **stack, unsigned int monty_line);
 void arg_error(void);
 void open_error(char *arg);
 void pint_error(unsigned int monty_line);
 void pop_error(unsigned int monty_line);
 void swap_error(unsigned int monty_line);
+void _opcodes(char *code, stack_t **stack, unsigned int monty_line);
 void releasestack(stack_t **stack);
 int _isdigit(int c);
 
