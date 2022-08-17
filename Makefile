@@ -10,7 +10,8 @@ VFLAGS= --leak-check=full --show-leak-kinds=all ./monty
 TARGET=monty
 SRC=	_opcodes.c \
 	error_functions.c \
-	mandatory_functions.c \
+	mandatory_functions_a.c \
+	mandatory_functions_b.c \
 	monty_loop.c
 
 SRC2=	*.c
